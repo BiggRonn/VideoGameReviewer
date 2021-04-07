@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    const reviewData = await Review.findAll({
       include: [
         {
           model: User,
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -28,9 +28,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/review/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const reviewData = await Review.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -39,10 +39,10 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const project = reviewData.get({ plain: true });
 
     res.render('project', {
-      ...project,
+      ...review,
       logged_in: req.session.logged_in
     });
   } catch (err) {
