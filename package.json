@@ -1,6 +1,5 @@
 {
   "name": "VideoGameReviewer",
-
   "version": "1.0.0",
   "description": "An app where users can sign up to post and comment on their favorite games!",
   "main": "server.js",
@@ -17,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/BiggRonn/VideoGameReviewer/issues"
   },
-  "homepage": "https://github.com/BiggRonn/VideoGameReviewer#readme"
+  "homepage": "https://github.com/BiggRonn/VideoGameReviewer#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2"
+  }
 }
