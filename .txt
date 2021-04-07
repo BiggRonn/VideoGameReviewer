@@ -1,0 +1,24 @@
+//build handlebars files
+    //homepage
+    //login page
+    //review
+    //comments
+
+//build front end javascript
+    //home button
+    //post button for comments
+    //new post button
+
+//build backend javascript
+    //set up models
+        //User
+        //review
+        //Comment
+    //set up routes
+        //login
+        //user-routes
+        //post-routes
+        //comment-routes
+    //set up server
+
+//build and seed database
