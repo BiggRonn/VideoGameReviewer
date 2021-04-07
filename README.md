@@ -22,7 +22,7 @@ We have a great experience to make all of our users with the ability to make
 reviews on all of your favorite games.
 
 ## Wireframe
-![screenshot of the wireframe](assets/images/wireframe-pro-screenshot1.png)
+![screenshot of the wireframe](assets/images/wireframe-pro2-screenshot1.png)
 
 ![screenshot of the wireframe](assets/images/wireframe-pro2-screenshot2.png)
 
