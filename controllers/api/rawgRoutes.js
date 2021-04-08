@@ -1,13 +1,18 @@
 const router = require("express").Router();
+const axios = require("axios");
 
 
-app.get("/", async function (req, res) {
+router.get("/", async function (req, res) {
 
   try {
-    const slug = document.querySelector('#game-title').toLowerCase().replaceText(' ', '-');
+    const slug = req.query.name.toLowerCase().replace(' ', '-');
 
-    apiKey = process.env.API_KEY
-    const url = `https://api.rawg.io/api/games/${slug}?key${apiKey}`
+    console.log(slug);
+
+    const apiKey = process.env.API_KEY
+    const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`
+
+    console.log(url);
 
     var rawgData = await axios({
       method: 'get',
