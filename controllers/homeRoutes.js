@@ -1,6 +1,6 @@
 //Importing dependencies, models, and authentication.
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Review, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      reviews, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -39,9 +39,9 @@ router.get('/review/:id', async (req, res) => {
       ],
     });
 
-    const project = reviewData.get({ plain: true });
+    const review = reviewData.get({ plain: true });
 
-    res.render('project', {
+    res.render('review', {
       ...review,
       logged_in: req.session.logged_in
     });
