@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <h3>Create a New Review:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-review-form">
       <div class="form-group">
         <label for="game-title">Game Title:</label>
         <input class="form-input" type="text" id="game-title" name="game-title" />
@@ -20,7 +20,7 @@
   </div>
 
   {{#if review.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 review-list">
     <h3>Current Reviews:</h3>
 
     {{#each Review as |review|}}
