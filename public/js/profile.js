@@ -5,9 +5,16 @@ const newFormHandler = async (event) => {
 
   if (name) {
     const response = await fetch(`/api/search?name=${name}`);
+    const game = response.json();
+    
+    
+    console.log(game);
+
+    console.log(game.PromiseResult.description_raw);
+    
 
     if (response.ok) {
-      console.log(response)
+      //console.log(response.json())
       // document.location.reload("/profile");
     } else {
       alert("Failed to create project");
