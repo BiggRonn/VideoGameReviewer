@@ -1,11 +1,11 @@
+const router = require("express").Router();
 
 
-app.get("/api/search", async function (req, res) {
+app.get("/", async function (req, res) {
 
   try {
     const slug = document.querySelector('#game-title').toLowerCase().replaceText(' ', '-');
 
-    gameInfo = [];
     apiKey = process.env.API_KEY
     const url = `https://api.rawg.io/api/games/${slug}?key${apiKey}`
 
@@ -26,6 +26,8 @@ app.get("/api/search", async function (req, res) {
 
 
 })
+
+module.exports = router;
 
 // app.get("/api/search", async function (req, res) {
 //     try {
