@@ -1,3 +1,4 @@
+//Importing the date 
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -7,6 +8,7 @@ module.exports = {
     // format large numbers with commas
     return parseInt(amount).toLocaleString();
   },
+  //Functionality to display random emojis
   get_emoji: () => {
     const randomNum = Math.random();
 

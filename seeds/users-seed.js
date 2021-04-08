@@ -1,5 +1,6 @@
+//Gathering data from user in models
 const { User } = require("../models");
-
+//Importing User data to allow functionality.
 const userData = [
   {
     name: "Joe",
