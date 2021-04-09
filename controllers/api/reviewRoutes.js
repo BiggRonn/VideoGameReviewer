@@ -49,7 +49,7 @@ router.get("/:name", async (req, res) => {
 
     let platforms = "";
     const gamePlatforms = response.parent_platforms.map(
-      (platform) => (platforms += platform.name + " ")
+      (platform) => (platforms += platform.platform.name + " ")
     );
 
     const gameCard = {
