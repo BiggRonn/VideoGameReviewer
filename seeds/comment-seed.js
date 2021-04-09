@@ -9,17 +9,17 @@ const commentData =  [
     },
     {
         user_id: 4,
-        review_id: 4,
+        review_id: 1,
         content: "There is a God!"
     },
     {
         user_id: 1,
-        review_id: 4,
+        review_id: 2,
         content: "Let's live a little."
     },
     {
         user_id: 3,
-        review_id: 5,
+        review_id: 3,
         content: "Welcome to the league"
     },
     {
@@ -29,17 +29,17 @@ const commentData =  [
     },
     {
         user_id: 3,
-        review_id: 4,
+        review_id: 1,
         content: "Can you match my skills bruh!"
     },
     {
         user_id: 4,
-        review_id: 3,
+        review_id: 2,
         content: "Okay i can live with that."
     },
     {
         user_id: 2,
-        post_id: 1,
+        review_id: 1,
         comment_text: "Keep stroking the wool!"
     }
 ]
