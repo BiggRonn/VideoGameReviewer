@@ -1,5 +1,3 @@
-
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -9,27 +7,30 @@ const newFormHandler = async (event) => {
     const response = await fetch(`/api/search?name=${name}`).then((data) =>
       data.json()
     );
-    
+
     console.log(response);
 
     const gameTitle = response.name_original;
     const gameDesc = response.description_raw;
 
     let gName = "";
-    const gameGenre = response.genres.map((genre)=>(gName += genre.name + " "));
+    const gameGenre = response.genres.map(
+      (genre) => (gName += genre.name + " ")
+    );
 
     let platforms = "";
-    const gamePlatforms = response.parent_platforms.map((platform)=>(platforms += platform.name + " "));
+    const gamePlatforms = response.parent_platforms.map(
+      (platform) => (platforms += platform.name + " ")
+    );
 
     const gameCard = {
       title: gameTitle,
       genre: gameGenre,
       platform: gamePlatforms,
-      description: gameDesc
-    }
+      description: gameDesc,
+    };
 
-    res.render('review', {gameCard});
-
+    res.render("review", { gameCard });
 
     //add a .then or promise catch
     // console.log(game);
