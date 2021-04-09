@@ -1,6 +1,29 @@
 const router = require("express").Router();
-const { Review } = require("../../models");
+const { Review, User, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+
+router.get("/", (req, res) => {
+  Review.findAll({
+    attributes: ["id", "game_title", "game_genre", "description"],
+    include: [
+      { model: User, attributes: ["name"] },
+      {
+        model: Comment,
+        attributes: ["id", "content", "user_id", "review_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["name"],
+        },
+      },
+    ],
+  })
+    .then((dbReviewData) => res.json(dbReviewData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 router.post("/", withAuth, async (req, res) => {
   try {

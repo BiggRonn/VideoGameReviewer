@@ -7,7 +7,7 @@ const withAuth = require("../../utils/auth");
 // Get comments
 router.get("/", async (req, res) => {
   try {
-    const commentData = Comment.findAll().res.json(commentData);
+    const commentData = await Comment.findAll().res.json(commentData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
