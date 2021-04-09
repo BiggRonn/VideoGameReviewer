@@ -1,24 +1,29 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector("#game-title").value ;
+  const name = document.querySelector("#game-title").value;
 
   if (name) {
-    const response = await fetch(`/api/search?name=${name}`);
-    const game = response.json();
-    
-    
-    console.log(game);
+    const response = await fetch(`/api/search?name=${name}`).then((data) =>
+      data.json()
+    );
+    // const game = response.json();
 
-    console.log(game.PromiseResult.description_raw);
-    
+    console.log(response);
 
-    if (response.ok) {
-      //console.log(response.json())
-      // document.location.reload("/profile");
-    } else {
-      alert("Failed to create project");
-    }
+    //add a .then or promise catch
+    // console.log(game);
+
+    //console.log(game.Promise);
+    // document.location.replace("/gamecard");
+    // console.log(game.description_raw);
+
+    // if (response.ok) {
+    //   // console.log(response.json())
+
+    // } else {
+    //   alert("Failed to create new review");
+    // }
   }
 };
 
