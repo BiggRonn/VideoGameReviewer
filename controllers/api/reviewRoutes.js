@@ -42,15 +42,21 @@ router.get("/:name", async (req, res) => {
     const gameTitle = response.name_original;
     const gameDesc = response.description_raw;
 
-    let gName = "";
+    
     const gameGenre = response.genres.map(
-      (genre) => (gName += genre.name + " ")
-    );
+      (genre) => (genre = genre.name)
+    ).join(", ");
 
-    let platforms = "";
+    // const gameGenre = response.genres.map(
+    //   (genre) => (gName += genre.name + " ")
+    // );
+
     const gamePlatforms = response.parent_platforms.map(
-      (platform) => (platforms += platform.platform.name + " ")
-    );
+      (platform) => (platform = platform.platform.name)).join(", ")
+    ;
+    // const gamePlatforms = response.parent_platforms.map(
+    //   (platform) => (platforms += platform.platform.name + " ")
+    // );
 
     const gameCard = {
       title: gameTitle,
