@@ -1,51 +1,11 @@
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector("#game-title").value;
 
   if (name) {
-    const response = await fetch(`/api/search?name=${name}`).then((data) =>
-      data.json()
-    );
+    document.location.replace("/api/reviews/" + name)
 
-    console.log(response);
-
-    const gameTitle = response.name_original;
-    const gameDesc = response.description_raw;
-
-    let gName = "";
-    const gameGenre = response.genres.map(
-      (genre) => (gName += genre.name + " ")
-    );
-
-    let platforms = "";
-    const gamePlatforms = response.parent_platforms.map(
-      (platform) => (platforms += platform.name + " ")
-    );
-
-    const gameCard = {
-      title: gameTitle,
-      genre: gameGenre,
-      platform: gamePlatforms,
-      description: gameDesc,
-    };
-
-    res.render("review", { gameCard });
-
-    //add a .then or promise catch
-    // console.log(game);
-
-    //console.log(game.Promise);
-    // document.location.replace("/gamecard");
-    // console.log(game.description_raw);
-
-    // if (response.ok) {
-    //   // console.log(response.json())
-
-    // } else {
-    //   alert("Failed to create new review");
-    // }
   }
 };
 
