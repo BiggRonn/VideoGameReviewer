@@ -2,6 +2,7 @@ const { Review } = require('../models')
 
 const reviewData = [
     {
+        id: 1,
         game_title: 'NeverWinter Nights',
         game_genre: 'RPG',
         description: 'A fantasy role playing game where you kill things and level up.',
@@ -9,6 +10,7 @@ const reviewData = [
         
     },
     {
+        id: 2,
         game_title: 'Call of Duty',
         game_genre: 'First-person shooter',
         description: 'Shoot people online and zombies.',
@@ -16,6 +18,7 @@ const reviewData = [
         
     },
     {
+        id: 3,
         game_title: 'Portal',
         game_genre: 'Puzzle',
         description: 'Gun shoots portals, solve puzzles',
