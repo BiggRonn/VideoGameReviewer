@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-
+//Creating Review model
 class Review extends Model {}
-
+//initiating review data
 Review.init(
   {
     id: {
