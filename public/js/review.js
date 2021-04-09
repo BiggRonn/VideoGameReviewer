@@ -4,15 +4,16 @@ const formHandler = async (event) => {
   const commit = document.querySelector("#review-desc").value;
 
   if (commit) {
-    const reviewData = await fetch("/", {
+    const reviewData = await fetch("/api/reviews", {
       method: "POST",
       body: JSON.stringify({ commit }),
       headers: {
         "Content-Type": "application/json",
       },
     });
-
-    document.location.replace("/profile");
+    if (reviewData.ok) {
+      document.location.replace("/profile");
+    }
   }
 };
 
