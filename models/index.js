@@ -1,3 +1,4 @@
+//Defining id's and collecting data
 const User = require("./User");
 const Review = require("./Review");
 const Comment = require("./Comment");
