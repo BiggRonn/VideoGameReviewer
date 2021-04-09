@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Review, User, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+const axios = require("axios");
 
 router.get("/", (req, res) => {
   Review.findAll({
@@ -22,6 +23,43 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get("/:name", async (req, res) => {
+  const slug = req.params.name.toLowerCase().replace(' ', '-');
+
+    //console.log(slug);
+
+    const apiKey = process.env.API_KEY
+    const url = `https://api.rawg.io/api/games/${slug}?key=${apiKey}`
+
+    //console.log(url);
+
+    var rawgData = await axios.get(url);
+
+    const response = rawgData.data;
+
+    const gameTitle = response.name_original;
+    const gameDesc = response.description_raw;
+
+    let gName = "";
+    const gameGenre = response.genres.map(
+      (genre) => (gName += genre.name + " ")
+    );
+
+    let platforms = "";
+    const gamePlatforms = response.parent_platforms.map(
+      (platform) => (platforms += platform.name + " ")
+    );
+
+    const gameCard = {
+      title: gameTitle,
+      genre: gameGenre,
+      platform: gamePlatforms,
+      description: gameDesc,
+    };
+    
+    res.render('review', gameCard);
 });
 
 
