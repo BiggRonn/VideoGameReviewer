@@ -4,38 +4,38 @@ const { Comment } = require('../models')
 const commentData =  [
   {
         user_id: 1,
-        post_id: 5,
-        comment_text: "This is bananas!"
+        review_id: 3,
+        content: "This is bananas!"
     },
     {
         user_id: 4,
-        post_id: 4,
-        comment_text: "There is a God!"
+        review_id: 4,
+        content: "There is a God!"
     },
     {
         user_id: 1,
-        post_id: 4,
-        comment_text: "Let's live a little."
+        review_id: 4,
+        content: "Let's live a little."
     },
     {
         user_id: 3,
-        post_id: 5,
-        comment_text: "Welcome to the league"
+        review_id: 5,
+        content: "Welcome to the league"
     },
     {
         user_id: 3,
-        post_id: 2,
-        comment_text: "This is my life here!"
+        review_id: 2,
+        content: "This is my life here!"
     },
     {
         user_id: 3,
-        post_id: 4,
-        comment_text: "Can you match my skills bruh!"
+        review_id: 4,
+        content: "Can you match my skills bruh!"
     },
     {
-        user_id: 5,
-        post_id: 3,
-        comment_text: "Okay i can live with that."
+        user_id: 4,
+        review_id: 3,
+        content: "Okay i can live with that."
     },
     {
         user_id: 2,

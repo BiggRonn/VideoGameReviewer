@@ -3,6 +3,26 @@ const { Review } = require('../models')
 const reviewData = [
     {
         game_title: 'NeverWinter Nights',
+        genre: 'RPG',
+        description: 'A fantasy role playing game where you kill things and level up.',
+        user_id: 1
         
     },
+    {
+        game_title: 'Call of Duty',
+        genre: 'First-person shooter',
+        description: 'Shoot people online and zombies.',
+        user_id: 2
+        
+    },
+    {
+        game_title: 'Portal',
+        genre: 'Puzzle',
+        description: 'Gun shoots portals, solve puzzles',
+        user_id: 3
+        
+    }
 ]
+const seedReviews = () => Review.bulkCreate(reviewData)
+
+module.exports = seedReviews;
