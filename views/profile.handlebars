@@ -19,11 +19,11 @@
     </form>
   </div>
 
-  {{#if review.length}}
+  {{#if reviews.length}}
   <div class="col-md-6 review-list">
     <h3>Current Reviews:</h3>
 
-    {{#each review as |review|}}
+    {{#each reviews as |review| }}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/review/{{review.id}}">{{review.game_title}}</a></h4>
