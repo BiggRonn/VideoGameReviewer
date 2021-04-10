@@ -47,10 +47,6 @@ router.get("/:name", async (req, res) => {
       (genre) => (genre = genre.name)
     ).join(", ");
 
-    // const gameGenre = response.genres.map(
-    //   (genre) => (gName += genre.name + " ")
-    // );
-
     const gamePlatforms = response.parent_platforms.map(
       (platform) => (platform = platform.platform.name)).join(", ")
     ;
