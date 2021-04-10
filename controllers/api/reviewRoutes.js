@@ -71,12 +71,12 @@ router.get("/:name", async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    const newProject = await Review.create({
+    const newReview = await Review.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newReview);
   } catch (err) {
     res.status(400).json(err);
   }

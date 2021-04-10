@@ -21,6 +21,10 @@ Review.init(
     description: {
       type: DataTypes.STRING,
     },
+    comment: {
+      type: DataTypes.STRING,
+
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
