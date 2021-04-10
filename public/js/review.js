@@ -1,12 +1,15 @@
 const formHandler = async (event) => {
   event.preventDefault();
 
-  const commit = document.querySelector("#review-desc").value;
+  const comment = document.querySelector("#review-desc").value;
+  const genre = document.querySelector("#game_genre").value;
+  const descr = document.querySelector("#description").value;
+  const title = document.querySelector("#game_title").value;
 
-  if (commit) {
+  if (comment) {
     const reviewData = await fetch("/api/reviews", {
       method: "POST",
-      body: JSON.stringify({ commit }),
+      body: JSON.stringify({ comment, genre, descr, title }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -17,4 +20,4 @@ const formHandler = async (event) => {
   }
 };
 
-document.querySelector(".card").addEventListener("submit", formHandler);
+document.querySelector(".new-review").addEventListener("submit", formHandler);
