@@ -2,14 +2,14 @@ const formHandler = async (event) => {
   event.preventDefault();
 
   const comment = document.querySelector("#review-desc").value;
-  const genre = document.querySelector("#game_genre").value;
-  const descr = document.querySelector("#description").value;
-  const title = document.querySelector("#game_title").value;
+  const game_genre = document.querySelector("#game_genre").value;
+  const description = document.querySelector("#description").value;
+  const game_title = document.querySelector("#game_title").value;
 
   if (comment) {
     const reviewData = await fetch("/api/reviews", {
       method: "POST",
-      body: JSON.stringify({ comment, genre, descr, title }),
+      body: JSON.stringify({game_title, game_genre, description, comment }),
       headers: {
         "Content-Type": "application/json",
       },

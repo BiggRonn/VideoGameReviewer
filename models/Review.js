@@ -19,7 +19,11 @@ Review.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+    },
+    comment: {
+      type: DataTypes.TEXT,
+
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -31,6 +35,7 @@ Review.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "review",

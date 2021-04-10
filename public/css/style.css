@@ -3,10 +3,6 @@ header,
   border-bottom: 1px solid #ccc;
 }
 
-body{
-  background-color: beige;
-}
-
 .no-button {
   background: none;
   border: none;

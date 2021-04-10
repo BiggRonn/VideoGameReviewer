@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const reviews = reviewData.map((review) => review.get({ plain: true }));
-    
+
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       reviews, 
@@ -39,7 +39,7 @@ router.get('/review/:id', async (req, res) => {
       ],
     });
 
-    const review = reviewData.get({ plain: true });
+    const review = reviewData.get(({ plain: true }));
 
     res.render('review', {
       ...review,
@@ -59,7 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [{ model: Review }],
     });
 
-    const user = userData.get({ plain: true });
+    const user = userData.get(({ plain: true }));
 
     res.render('profile', {
       ...user,
