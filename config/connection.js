@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
-const { sequelize } = require('../models/User');
+//const { sequelize } = require('../models/User');
 
 // Enable access to .env variables
 require('dotenv').config();
+
+let sequelize;
 
 // Use environment variables to connect to database
 if (process.env.JAWSDB_URL){

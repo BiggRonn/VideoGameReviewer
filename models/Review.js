@@ -19,10 +19,10 @@ Review.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     comment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
 
     },
     user_id: {
