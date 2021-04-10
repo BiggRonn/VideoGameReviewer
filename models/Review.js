@@ -14,9 +14,6 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // image_url: {
-    //   type: DataTypes.STRING,
-    // },
     game_genre: {
       type: DataTypes.STRING,
       allowNull: false,
