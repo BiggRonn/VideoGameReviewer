@@ -4,8 +4,7 @@ const newFormHandler = async (event) => {
   const name = document.querySelector("#game-title").value;
 
   if (name) {
-    document.location.replace("/api/reviews/" + name)
-
+    document.location.replace("/api/reviews/" + name);
   }
 };
 
@@ -13,7 +12,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/review/${id}`, {
+    const response = await fetch(`/api/reviews/${id}`, {
       method: "DELETE",
     });
 
