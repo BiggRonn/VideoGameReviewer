@@ -21,7 +21,7 @@ Review.init(
     description: {
       type: DataTypes.TEXT,
     },
-    comment: {
+    platform: {
       type: DataTypes.TEXT,
 
     },
@@ -35,7 +35,6 @@ Review.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "review",
