@@ -58,7 +58,7 @@ router.get("/:name", async (req, res) => {
       description: gameDesc,
     };
     
-    res.render('review', gameCard);
+    res.render('create-review', gameCard);
 });
 
 
