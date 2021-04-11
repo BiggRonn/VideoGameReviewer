@@ -41,7 +41,7 @@ router.get('/review/:id', async (req, res) => {
 
     const review = reviewData.get(({ plain: true }));
 
-    res.render('review', {
+    res.render('edit-review', {
       ...review,
       logged_in: req.session.logged_in
     });
