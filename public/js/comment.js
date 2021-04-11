@@ -1,18 +1,17 @@
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const comment_text = document.querySelector('textarea[name="review-desc"]')
+  const content = document.querySelector('textarea[name="review-desc"]')
     .value;
 
-  const content = window.location.toString().split("/")[
+  const review_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
-  if (comment_text) {
+  if (content) {
     const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({
-        user_id,
         review_id,
         content,
       }),
