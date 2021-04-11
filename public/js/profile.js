@@ -5,7 +5,6 @@ const newFormHandler = async (event) => {
 
   if (name) {
     document.location.replace("/api/reviews/" + name)
-
   }
 };
 

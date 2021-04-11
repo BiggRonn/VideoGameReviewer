@@ -1,6 +1,7 @@
 const formHandler = async (event) => {
   event.preventDefault();
 
+
   const platform = document.getElementById("platform").innerHTML;
   const game_genre = document.getElementById("game_genre").innerHTML;
   const description = document.getElementById("description").innerHTML;
@@ -11,6 +12,7 @@ const formHandler = async (event) => {
     const reviewData = await fetch("/api/reviews", {
       method: "POST",
       body: JSON.stringify({game_title, game_genre, description, platform}),
+
       headers: {
         "Content-Type": "application/json",
       },
