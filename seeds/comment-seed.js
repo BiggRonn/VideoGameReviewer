@@ -40,7 +40,7 @@ const commentData =  [
     {
         user_id: 2,
         review_id: 1,
-        comment_text: "Keep stroking the wool!"
+        content: "Keep stroking the wool!"
     }
 ]
 //Creating the data for the comments

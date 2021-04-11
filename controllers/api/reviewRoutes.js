@@ -5,7 +5,7 @@ const axios = require("axios");
 
 router.get("/", (req, res) => {
   Review.findAll({
-    attributes: ["id", "game_title", "game_genre", "description"],
+    attributes: ["id", "game_title", "game_genre", "platform", "description"],
     include: [
       { model: User, attributes: ["name"] },
       {
@@ -47,17 +47,10 @@ router.get("/:name", async (req, res) => {
       (genre) => (genre = genre.name)
     ).join(", ");
 
-    // const gameGenre = response.genres.map(
-    //   (genre) => (gName += genre.name + " ")
-    // );
-
     const gamePlatforms = response.parent_platforms.map(
       (platform) => (platform = platform.platform.name)).join(", ")
     ;
-    // const gamePlatforms = response.parent_platforms.map(
-    //   (platform) => (platforms += platform.platform.name + " ")
-    // );
-
+    
     const gameCard = {
       title: gameTitle,
       genre: gameGenre,
@@ -71,11 +64,12 @@ router.get("/:name", async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    const newProject = await Review.create({
-      req: body, user_id: req.session.user_id,
+    const newReview = await Review.create({
+      ...req.body,
+      user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newReview);
   } catch (err) {
     res.status(400).json(err);
   }

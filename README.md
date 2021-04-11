@@ -32,3 +32,6 @@ reviews on all of your favorite games.
 
 * https://api.rawg.io/docs/
 * https://bulma.io/documentation/
+
+#Link to Deployed App
+https://video-game-reviewer.herokuapp.com/
