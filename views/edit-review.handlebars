@@ -1,11 +1,12 @@
 <section class="card">
     <form class="updated-review">
-        <header id="game_title">{{title}}</header>
+        <header id="game_title"><strong> {{game_title}}</strong></header>
         <div class="card-body">
-            <div id="game_genre"><strong>Genre:</strong> {{genre}}</div>
+            <div id="game_genre"><strong>Genre:</strong> {{game_genre}}</div>
             <div><strong>Platforms:</strong> {{platform}}</div>
             <div id="description"><strong>Description:</strong> {{description}}</div>
-            <div class="form-group">
+
+            <div class="edit-review">
                 <label for="review-desc"><strong>Comments:</strong> </label>
                 <textarea class="form-input" id="review-desc" name="review-desc"></textarea>
             </div>
@@ -16,4 +17,5 @@
     </form>
 </section>
 
+<script src="/js/edit-review.js"></script>
 <script src="/js/comment.js"></script>

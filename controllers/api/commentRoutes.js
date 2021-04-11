@@ -5,14 +5,13 @@ const withAuth = require("../../utils/auth");
 // Routes
 
 // Get comments
-router.get("/", async (req, res) => {
-  try {
-    const commentData = await Comment.findAll();
-    res.json(commentData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+router.get("/", (req, res) => {
+  Comment.findAll()
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch((err) => {
+      console.log(err.message);
+      res.status(500).json(err);
+    });
 });
 
 // Post a new comment
@@ -20,9 +19,10 @@ router.post("/", withAuth, async (req, res) => {
   try {
     if (req.session) {
       const commentData = await Comment.create({
-        user_id: req.session.user_id,
         review_id: req.body.review_id,
         content: req.body.content,
+        //use the user id off of sessions
+        user_id: req.session.user_id,
       });
       res.json(commentData);
     }
