@@ -1,19 +1,19 @@
 <section class="card">
-    <form class="new-review">
-    <header id="game_title">{{title}}</header>
-    <div class="card-body">
-        <div id="game_genre"><strong>Genre:</strong> {{genre}}</div>
-        <div><strong>Platforms:</strong> {{platform}}</div>
-        <div id="description"><strong>Description:</strong> {{description}}</div>
-        <div class="form-group">
-            <label for="review-desc"><strong>Comments:</strong> </label>
-            <textarea class="form-input" id="review-desc" name="review-desc"></textarea>
+    <form class="updated-review">
+        <header id="game_title">{{title}}</header>
+        <div class="card-body">
+            <div id="game_genre"><strong>Genre:</strong> {{genre}}</div>
+            <div><strong>Platforms:</strong> {{platform}}</div>
+            <div id="description"><strong>Description:</strong> {{description}}</div>
+            <div class="form-group">
+                <label for="review-desc"><strong>Comments:</strong> </label>
+                <textarea class="form-input" id="review-desc" name="review-desc"></textarea>
+            </div>
+            <div class="form-group" id="reviewSubmit">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
-        <div class="form-group" id="reviewSubmit">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
-</form>
+    </form>
 </section>
 
-<script src="/js/review.js"></script>
+<script src="/js/comment.js"></script>
