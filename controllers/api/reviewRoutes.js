@@ -5,7 +5,7 @@ const axios = require("axios");
 
 router.get("/", (req, res) => {
   Review.findAll({
-    attributes: ["id", "game_title", "game_genre", "description"],
+    attributes: ["id", "game_title", "game_genre", "platform", "description"],
     include: [
       { model: User, attributes: ["name"] },
       {
