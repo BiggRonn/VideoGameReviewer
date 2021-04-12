@@ -2,10 +2,10 @@ const formHandler = async (event) => {
   event.preventDefault();
 
 
-  const platform = document.getElementById("platform").innerTEXT;
-  const game_genre = document.getElementById("game_genre").innerTEXT;
-  const description = document.getElementById("description").innerTEXT;
-  const game_title = document.getElementById("game_title").innerTEXT;
+  const platform = document.getElementById("platform").innerText;
+  const game_genre = document.getElementById("game_genre").innerText;
+  const description = document.getElementById("description").innerText;
+  const game_title = document.getElementById("game_title").innerText;
 
 
   if (game_title) {
