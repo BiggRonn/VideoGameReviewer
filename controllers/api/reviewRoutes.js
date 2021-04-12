@@ -26,6 +26,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:name", async (req, res) => {
+  try{
   const slug = req.params.name.toLowerCase().replace(' ', '-');
 
     //console.log(slug);
@@ -59,6 +60,9 @@ router.get("/:name", async (req, res) => {
     };
     
     res.render('create-review', gameCard);
+  }catch(err){
+    res.status(400).json(err);
+  }
 });
 
 
