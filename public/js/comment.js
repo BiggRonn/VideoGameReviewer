@@ -1,7 +1,7 @@
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const content = document.querySelector("#review-desc").value;
+  const content = document.getElementById("#review-desc").innerText;
 
   const review_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
